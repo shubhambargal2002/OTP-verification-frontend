@@ -1,35 +1,36 @@
 import React, { useState } from "react";
-import "./registerOtp.css"
-import { useLocation, useNavigate } from 'react-router-dom'
-import axios from 'axios';
-import { toast } from 'react-toastify';
+import "./registerOtp.css";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
 const host = "https://otp-verification-shubham-bargal.onrender.com";
 
 const RegisterOtp = (e) => {
-    const [otp,setOtp]=useState("")
+  const [otp, setOtp] = useState("");
 
-    const location = useLocation();
+  const location = useLocation();
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleSubmit = async (e)=>{
-        e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        try {
-          const data = {
-            otp, email: location.state
-          }
-            const res = await axios.post(`${host}/registerOtpVerify`, data)
+    try {
+      const data = {
+        otp,
+        email: location.state,
+      };
+      const res = await axios.post(`${host}/registerOtpVerify`, data);
 
-            if(res.status === 200){
-              localStorage.setItem("token", res.data.authtoken);
-                navigate("/dashboard");
-                toast.success(res.data.message);
-            }
-        } catch (error) {
-          toast.error(error.response.data.error)
-        }
+      if (res.status === 200) {
+        sessionStorage.setItem("token", res.data.authtoken);
+        navigate("/dashboard");
+        toast.success(res.data.message);
+      }
+    } catch (error) {
+      toast.error(error.response.data.error);
     }
+  };
 
   return (
     <div className="form_container">

@@ -20,10 +20,10 @@ const LoginOtp = () => {
         otp,
         email: location.state,
       };
-      const res = await axios.post(`${host}/loginOtpVerify`,data);
+      const res = await axios.post(`${host}/loginOtpVerify`, data);
 
       if (res.status === 200) {
-        localStorage.setItem("token", res.data.authtoken);
+        sessionStorage.setItem("token", res.data.authtoken);
         navigate("/dashboard");
         toast.success(res.data.message);
       }
