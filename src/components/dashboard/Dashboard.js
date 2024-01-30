@@ -1,23 +1,10 @@
 import React from "react";
 import "./dashboard.css";
-import { useNavigate } from "react-router-dom";
+import Navbar from "../navbar/Navbar";
 
-const Dashboard = (props) => {
-  let navigate = useNavigate();
-
-  const handleLogout = () => {
-    sessionStorage.removeItem("token");
-    navigate("/login");
-  };
+const Dashboard = () => {
   return (
-      <div className="startContainer">
-        <nav className="navbar">
-          <h1>I-notebook</h1>
-          <button className="logoutButton" onClick={handleLogout}>
-            Sign Out
-          </button>
-        </nav>
-      </div>
+      <Navbar/>
   );
 };
 

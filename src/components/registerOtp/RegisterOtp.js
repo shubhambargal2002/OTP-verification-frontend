@@ -34,8 +34,8 @@ const RegisterOtp = (e) => {
   };
 
   return (
-    <div className="form_container">
-      <form onSubmit={handleSubmit} className="form">
+    <div className="registerotp_form_container">
+      <form onSubmit={handleSubmit} className="registerotp_form">
         <h1>Enter OTP Here</h1>
         <input
           type="text"

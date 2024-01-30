@@ -33,8 +33,8 @@ const LoginOtp = () => {
     }
   };
   return (
-    <div className="form_container">
-      <form onSubmit={handleSubmit} className="form">
+    <div className="loginotp_form_container">
+      <form onSubmit={handleSubmit} className="loginotp_form">
         <h1>Enter OTP Here</h1>
         <input
           type="text"

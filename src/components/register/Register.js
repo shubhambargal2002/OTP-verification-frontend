@@ -43,7 +43,7 @@ function Register() {
           </Link>
         </div>
 
-        <div className="right">
+        <div className="signupRight">
           <form className="formContainer" onSubmit={handleSubmit}>
             <h1>Create Account</h1>
             <input
@@ -52,7 +52,7 @@ function Register() {
               name="name"
               onChange={onChange}
               required
-              className="input"
+              className="signup_input"
             />
             <input
               type="email"
@@ -60,9 +60,9 @@ function Register() {
               name="email"
               onChange={onChange}
               required
-              className="input"
+              className="signup_input"
             />
-            <div className="password_input_div">
+            <div className="signup_password_input_div">
               <input
                 type={!passhow ? "password" : "text"}
                 placeholder="Password"
