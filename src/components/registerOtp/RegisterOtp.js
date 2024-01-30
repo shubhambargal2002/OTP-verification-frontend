@@ -3,7 +3,8 @@ import "./registerOtp.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-const host = "https://otp-verification-shubham-bargal.onrender.com";
+// const host = "https://otp-verification-shubham-bargal.onrender.com";
+const host = "http://localhost:5000";
 
 const RegisterOtp = (e) => {
   const [otp, setOtp] = useState("");

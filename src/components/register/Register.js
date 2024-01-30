@@ -3,7 +3,8 @@ import "./register.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-const host = "https://otp-verification-shubham-bargal.onrender.com";
+// const host = "https://otp-verification-shubham-bargal.onrender.com";
+const host = "http://localhost:5000";
 
 function Register() {
   const [user, setUser] = useState({ name: "", email: "", password: "" });
